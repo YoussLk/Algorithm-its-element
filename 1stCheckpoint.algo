@@ -1,0 +1,34 @@
+ALGORITHM text_analyze
+VAR
+
+    c : CHAR := '';
+    str: STRING;
+    nbr_char : INTEGER := 0;
+    nbr_word : INTEGER := 0;
+    nbr_vow : INTEGER := 0;
+    iteration : INTEGER := 0;
+BEGIN
+        Read(str);
+
+        c = str[iteration]
+
+    WHILE (c <> '.') DO
+      
+        nbr_char := nbr_char +1;    
+        IF (c = 'a' OR c ='e' OR c ='i' OR c ='o' OR c ='u' OR c ='y') THEN
+            nbr_vow := nbr_vow +1;
+        END_IF
+
+        IF (c =' ') THEN
+            nbr_word := nbr_word +1;
+        END_IF
+
+        iteration = iteration+1
+        c = str[iteration]
+        
+    END_WHILE
+
+    // Write("The length of the sentence is ",nbr_char);
+    // Write("The number of words in the sentence is ",nbr_word);
+    // Write("he number of vowels in the sentence. is ",nbr_vow);
+END
